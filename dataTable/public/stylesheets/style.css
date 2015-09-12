@@ -1,8 +1,1 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
+@import url(libs/bootstrap.min.css);*{box-sizing:border-box}html,body,h1,h2,h3,p,a,span{margin:0;padding:0}html,body{height:100%}body{font-size:16px}.rel{position:relative !important}.abs{position:absolute !important}.bg-gray{background-color:#f0f0f0}body{max-width:960px;margin:0 auto}body #header{height:50px}body #content{min-height:100%;margin-bottom:-50px}body #content:after{content:'';display:block;height:50px}body #footer{height:50px}

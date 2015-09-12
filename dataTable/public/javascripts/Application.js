@@ -21,12 +21,11 @@ define([
 
         app.mainRegion.show(app.applicationView);
 
-        //this.router = new Router(app);
+        this.router = new Router(app);
 
         app.on('start', function(options) {
             Backbone.history.start({
-                pushState: true,
-                root: "/states"
+                pushState: true
             });
         });
         return app;

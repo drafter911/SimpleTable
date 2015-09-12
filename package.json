@@ -10,7 +10,7 @@
     "type": "git",
     "url": "--"
   },
-  "author": "drafter911",
+  "author": "drafter911 <drafter911@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3"

@@ -6,7 +6,7 @@ define([
 ], function (_, Marionette, template, Item) {
     return Marionette.CompositeView.extend({
         template: _.template(template),
-        childView: new Item,
+        childView: Item,
         childViewContainer: "h1",
 
         initialize: function() {

@@ -10,7 +10,7 @@ define([
         defaults: function () {
             return {
                 'name': null,
-                'abbreviation': null
+                'alpha-2': null
             };
         }
     });

@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, p, a, span {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+}
+
+.rel {
+  position: relative !important;
+}
+
+.abs {
+  position: absolute !important;
+}
+
+.bg-gray {
+  background-color: $gray;
+}
