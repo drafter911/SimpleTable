@@ -4,7 +4,6 @@ define([
     'Collections/DataTab',
     'Views/DataTab/TableView'
 ], function (Backbone, Marionette, TabElemsCollection, DataTabView) {
-    //var controller = Marionette.Object.extend({
     return Marionette.Object.extend({
 
         initialize: function(app) {

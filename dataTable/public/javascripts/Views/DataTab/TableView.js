@@ -7,10 +7,9 @@ define([
     return Marionette.CompositeView.extend({
         template: _.template(template),
         childView: Item,
-        childViewContainer: "h1",
+        childViewContainer: '#table-content',
 
         initialize: function() {
-            //debugger
             this.listenTo(this.collection, 'sync', function(){
                 console.log(this.collection.toJSON());
             });

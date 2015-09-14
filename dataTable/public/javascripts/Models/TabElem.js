@@ -5,12 +5,18 @@ define([
     'use strict';
 
     var Model = Backbone.Model.extend({
-        idAttribute: 'name',
+        idAttribute: '_id',
 
         defaults: function () {
             return {
-                'name': null,
-                'alpha-2': null
+                "_id": null,
+                "index": null,
+                "isActive": null,
+                "age": null,
+                "credit": null,
+                "registered": null,
+                "latitude": null,
+                "longitude": null
             };
         }
     });

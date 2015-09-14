@@ -1,1 +1,4 @@
 .idea/
+node_modules/
+dataTable/node_modules/
+dataTable/public/.sass-cache/

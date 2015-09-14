@@ -10,7 +10,7 @@ define([
         },
 
         appRoutes: {
-            "states": "showCollection"
+            "data": "showCollection"
         }
     });
 });
