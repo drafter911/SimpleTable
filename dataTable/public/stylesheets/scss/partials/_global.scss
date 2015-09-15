@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html, body, h1, h2, h3, p, a, span {
+*, html, body, h1, h2, h3, p, a, span {
   margin: 0;
   padding: 0;
 }
@@ -24,4 +24,14 @@ body {
 
 .bg-gray {
   background-color: $gray;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../../../images/preloader.GIF") center no-repeat;
+
 }

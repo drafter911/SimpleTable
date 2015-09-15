@@ -18,7 +18,11 @@ requirejs.config({
             'exports': 'Marionette'
         },
 
-        'jquery': {'exports': ['$','jquery', 'jQuery', 'JQuery']}
+        'jquery': {'exports': ['$', 'jquery', 'jQuery', 'JQuery']},
+
+        'simplePagination': ['jquery'],
+
+        'jquerySerialize': ['jquery']
     },
 
     paths: {
@@ -26,7 +30,9 @@ requirejs.config({
         'marionette': '/assets/backbone.marionette/backbone.marionette.min',
         'underscore': '/assets/underscore/underscore-min',
         'jquery': '/assets/jquery/jquery.min',
-        'text': '/assets/text/text'
+        'text': '/assets/text/text',
+        'simplePagination': '/assets/simplePagination/jquery.simplePagination',
+        'jquerySerialize': '/assets/jquerySerialize/jquery.serializejson.min'
     }
 });
 
