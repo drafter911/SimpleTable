@@ -8,7 +8,6 @@ define([
 
         initialize: function (app) {
             this.app = app;
-            //console.log('controller initialize');
             this.collection = new TabElemsCollection();
             this.listenTo(this.collection, 'changePage', this.getTable);
         },

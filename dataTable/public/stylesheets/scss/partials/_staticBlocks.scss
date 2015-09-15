@@ -1,19 +1,54 @@
-body {
-  max-width: 960px;
-  margin: 0 auto;
-  #header {
-    height: 50px;
-  }
-  #content {
+#main {
+  position: relative;
+  height: 100%;
+  .wrap-container {
     min-height: 100%;
-    margin-bottom: -50px;
-    &:after {
-      content: '';
-      display: block;
-      height: 50px;
+    .wrapp {
+      overflow: auto;
+      margin-bottom: -50px;
+      &:after {
+        content: '';
+        display: block;
+        height: 50px;
+      }
+      #header {
+        height: 50px;
+        .container {
+          h1 {
+            line-height: 50px;
+            text-align: center;
+          }
+        }
+      }
+      #content {
+        max-width: 960px;
+        height: calc(100% - 100px);
+        margin: 30px auto 0;
+      }
     }
+
   }
+
   #footer {
     height: 50px;
+    ul {
+      margin: 0;
+      text-align: center;
+      li {
+        .fa {
+          font-size: 24px;
+          line-height: 50px;
+          &:hover {
+            text-decoration: none;
+          }
+          &:visited {
+            text-decoration: none;
+          }
+          &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
 }

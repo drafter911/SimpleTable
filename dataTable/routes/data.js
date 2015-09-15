@@ -6,7 +6,7 @@ var data = require('../data/data.json');
 router.get('/data', function (req, res, next) {
     var parameters = req.query;
     if (parameters.hasOwnProperty('limit') === false) {
-        parameters.limit = 10;
+        parameters.limit = 20;
     }
     if (parameters.hasOwnProperty('offset') === false) {
         parameters.offset = 0;
@@ -18,9 +18,7 @@ router.get('/data', function (req, res, next) {
     for (var i = parameters.offset; i < (+parameters.limit + +parameters.offset); i++) {
         pagedData.push(data[i]);
     }
-    var page = (+parameters.offset / 10) + 1;
-    //res.send(JSON.stringify(data));
-    //res.send(JSON.stringify(pagedData));
+    var page = (+parameters.offset / 20) + 1;
     res.send({table: pagedData, page: page, count: data.length});
 });
 

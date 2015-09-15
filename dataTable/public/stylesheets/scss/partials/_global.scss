@@ -1,5 +1,5 @@
-* {
-  box-sizing: border-box;
+*, *:after, *:before {
+  @include boxSizing;
 }
 
 *, html, body, h1, h2, h3, p, a, span {

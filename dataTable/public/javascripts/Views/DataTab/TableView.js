@@ -13,7 +13,7 @@ define([
         childViewContainer: '#table-content',
 
         data: {
-            limit: 10,
+            limit: 20,
             offset: 0
         },
 
@@ -24,7 +24,6 @@ define([
                     that.togglePreloader('req');
                 },
                 'sync': function (options, params) {
-                    console.log('sync:', options, params);
                     that.togglePreloader('res');
                     that.initPagination(params.count, params.page);
                 }
@@ -36,13 +35,11 @@ define([
             $('.pagination').pagination({
                 items: count,
                 currentPage: currentPage,
-                itemsOnPage: 10,
+                itemsOnPage: 20,
                 cssStyle: 'light-theme',
                 onPageClick: function (pageNumber, e) {
-                    that.data.offset = (pageNumber - 1) * 10;
+                    that.data.offset = (pageNumber - 1) * 20;
                     that.collection.trigger('changePage', that.data, $.param(that.data));
-                    console.log(pageNumber);
-                    //that.collection.trigger()
                 }
             });
         },
