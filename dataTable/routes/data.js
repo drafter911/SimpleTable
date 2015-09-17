@@ -3,6 +3,8 @@ var router = express.Router();
 
 var data = require('../data/data.json');
 
+var page;
+
 router.get('/data', function (req, res, next) {
     var parameters = req.query;
     if (parameters.hasOwnProperty('limit') === false) {
@@ -19,16 +21,6 @@ router.get('/data', function (req, res, next) {
         pagedData.push(data[i]);
     }
     if (parameters.hasOwnProperty('sortBy')) {
-        //if(parameters.desc === true){
-        //    pagedData.sort(function (a, b) {
-        //        if (a[parameters.sortBy] > b[parameters.sortBy])
-        //            return 1;
-        //        if (a[parameters.sortBy] < b[parameters.sortBy])
-        //            return -1;
-        //        return 0;
-        //    });
-        //}
-        //if(parameters.desc === false) {
             pagedData.sort(function (a, b) {
                 if (a[parameters.sortBy] > b[parameters.sortBy])
                     return 1;
@@ -36,17 +28,16 @@ router.get('/data', function (req, res, next) {
                     return -1;
                 return 0;
             });
-        //}
     }
-    var page = (+parameters.offset / 20) + 1;
+    page = (+parameters.offset / 20) + 1;
     res.send({table: pagedData, page: page, count: data.length});
 });
 
 router.post('/data', function (req, res, next) {
     var dataElem = req.body;
     data.push(dataElem);
-    dataElem._id = data.length + 1;
-    res.send(dataElem);
+    dataElem._id = data.length;
+    res.send({elem: dataElem, count: data.length});
 });
 
 module.exports = router;

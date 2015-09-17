@@ -1,7 +1,58 @@
-<!-- <div class="sort-buttons">
-    <button class=" btn fa fa-sort-numeric-desc"></button>
-    <button class=" btn fa fa-sort-numeric-asc"></button>
-</div> -->
+<div class="toggle-pan">
+    <button class="btn fa fa-plus"> Add Item</button>
+    <button class="btn fa fa-minus hidden"> Hide Add panel</button>
+</div>
+
+<div class="add-form-pan hidden">
+    <form id="add-new-item-form">
+  <div class="form-group">
+    <label for="is-active-id">Is active</label>
+    <select name="isActive" id="is-active-id">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="age-id">Age</label>
+    <input type="text" 
+        name="age" 
+        class="form-control" 
+        id="age-id" 
+        placeholder="0-99" 
+        oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+  </div>
+  <div class="form-group">
+    <label for="credit-id">Credit</label>
+    <input type="text" 
+        name="credit" 
+        class="form-control" 
+        id="credit-id" 
+        placeholder="0...10000000"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+  </div>
+  <div class="form-group">
+    <label for="latitude-id">Latitude</label>
+    <input type="text" 
+        name="latitude" 
+        class="form-control" 
+        id="latitude-id" 
+        placeholder="-1000...100000" 
+        oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+  </div>
+  <div class="form-group">
+    <label for="longitude-id">Longitude</label>
+    <input type="text" 
+        name="longitude" 
+        class="form-control" 
+        id="longitude-id" 
+        placeholder="-10000.000...10000.000"
+        oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+  </div>
+
+  <button type="submit" id="add-new-item-btn" class="btn btn-default">Send invitation</button>
+</form>
+</div>
+
 <table class="table table-striped table-bordered">
     <thead>
     <tr class="table-header">

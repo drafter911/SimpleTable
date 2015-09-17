@@ -12,6 +12,7 @@ define([
             this.app = app;
             this.collection = new TabElemsCollection();
             this.listenTo(this.collection, 'changePage', this.getTable);
+            this.listenTo(this.collection, 'addNewItem', this.addItem);
         },
 
         showCollection: function (params) {
@@ -25,19 +26,13 @@ define([
         },
 
         getTable: function (data, reqUrl) {
-            // debugger
-            // console.log($.parseParams(data));
-            // console.log(Backbone.history);
             if(data === undefined){
-                // debugger
                 data = $.parseParams(Backbone.history.location.hash);
-                // debugger
             }
             var that = this;
             options = _.extend({
                 data: data,
                 // url: that.collection.url + '/?',
-                //url: that.collection.url + '/?' + reqUrl,
                 success: function (collection, resp, xhr) {
                     that.collection.reset(resp.table);
                     console.log('succ:', xhr.xhr.responseJSON);
@@ -51,6 +46,20 @@ define([
                 }
             });
             that.collection.fetch(options);
+        },
+
+        addItem: function(newModel, data, reqUrl){
+            var that = this;
+            options = _.extend({
+                // url: that.collection.url + '/?',
+                success: function (collection, resp, xhr) {
+                    that.collection.push(resp.elem);
+                },
+                error: function () {
+                    alert('Add element failed.');
+                }
+            });
+            that.collection.create(newModel);
         }
 
     });

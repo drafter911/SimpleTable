@@ -1,3 +1,4 @@
+<%if(model._id){%>
 <td><%=model._id%></td>
 <td><%if(model.isActive){%>
     Yes
@@ -9,3 +10,4 @@
 <td class="<%if(+model.credit < 0){%>red<%} if(+model.credit > 0){%>blue<%}%>"><%=model.credit%></td>
 <td class="<%if(+model.latitude < 0){%>red<%} if(+model.latitude > 0){%>blue<%}%>"><%=model.latitude%></td>
 <td class="<%if(+model.longitude < 0){%>red<%} if(+model.longitude > 0){%>blue<%}%>"><%=model.longitude%></td>
+<%}%>

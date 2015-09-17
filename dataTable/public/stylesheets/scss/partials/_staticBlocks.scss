@@ -24,6 +24,9 @@
         max-width: 960px;
         height: calc(100% - 100px);
         margin: 30px auto 0;
+        .toggle-pan {
+          padding-bottom: 10px;
+        }
         .sort-buttons {
           padding: 5px 0;
           .white:hover, .white:focus {

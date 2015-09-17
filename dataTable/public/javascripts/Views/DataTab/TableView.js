@@ -22,7 +22,9 @@ define([
         events: {
             'click .fa-sort-numeric-desc': 'descendingSort',
             'click .fa-sort-numeric-asc': 'ascendingSort',
-            'click .column-sort': 'sortByCurrentColumn'
+            'click .column-sort': 'sortByCurrentColumn',
+            'click .toggle-pan .btn': 'toggleAddPanel',
+            'click #add-new-item-btn': 'addNewItem'
         },
 
         initialize: function (options) {
@@ -48,20 +50,11 @@ define([
             console.log($(e.target).data('sort'));
         },
 
-        // descendingSort: function(e) {
-        //     this.setSortDirection(true, e);
-        // },
-
-        // ascendingSort: function(e) {
-        //     this.setSortDirection(false, e);
-        // },
-
-        // setSortDirection: function(bool, e) {
-        //     this.data.desc = bool;
-        //     this.sendRequest(this.data);
-        //     $('.sort-buttons').find('.fa').removeClass('white bg-blue');
-        //     $(e.target).addClass('white bg-blue');
-        // },
+        toggleAddPanel: function(){
+            console.log('sdsdvff');
+            $('.toggle-pan .btn').toggleClass('hidden');
+            $('.add-form-pan').toggleClass('hidden');
+        },
 
         initPagination: function (count, currentPage) {
             var that = this;
@@ -74,7 +67,6 @@ define([
                 onPageClick: function (pageNumber, e) {
                     that.data.offset = (pageNumber - 1) * 20;
                     that.sendRequest(that.data);
-                    //that.collection.trigger('changePage', that.data, $.param(that.data));
                 }
             });
         },
@@ -89,8 +81,20 @@ define([
         },
 
         sendRequest: function(data) {
-            // debugger
             this.collection.trigger('changePage', data, $.param(data));
+        },
+
+        addNewItem: function(e){
+            e.preventDefault();
+            var form = $('#add-new-item-form').serializeJSON({parseAll: true});
+            this.data = {
+            limit: 20,
+            offset: 0,
+            sortBy: '_id',
+            desc: false
+        };
+            this.collection.trigger('addNewItem', form, this.data, $.param(this.data));
+            console.log('eeeeeeeeeee',form);
         }
     });
 });

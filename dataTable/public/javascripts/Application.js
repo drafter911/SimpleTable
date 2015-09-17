@@ -27,7 +27,6 @@ define([
         this.controller = new DTController(app);
 
         app.on('start', function(options) {
-            debugger
             Backbone.history.start({
                 pushState: true
             });
