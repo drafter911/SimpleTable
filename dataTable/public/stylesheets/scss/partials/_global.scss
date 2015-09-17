@@ -22,6 +22,22 @@ body {
   position: absolute !important;
 }
 
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.white {
+  color: white;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
 .bg-gray {
   background-color: $gray;
 }

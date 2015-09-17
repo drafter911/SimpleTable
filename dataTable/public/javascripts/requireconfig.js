@@ -20,6 +20,8 @@ requirejs.config({
 
         'jquery': {'exports': ['$', 'jquery', 'jQuery', 'JQuery']},
 
+        'jqueryParseParams': ['jquery'],
+
         'simplePagination': ['jquery'],
 
         'jquerySerialize': ['jquery']
@@ -32,7 +34,8 @@ requirejs.config({
         'jquery': '/assets/jquery/jquery.min',
         'text': '/assets/text/text',
         'simplePagination': '/assets/simplePagination/jquery.simplePagination',
-        'jquerySerialize': '/assets/jquerySerialize/jquery.serializejson.min'
+        'jquerySerialize': '/assets/jquerySerialize/jquery.serializejson.min',
+        'jqueryParseParams': '/assets/parseparams/jquery.parseparams'
     }
 });
 

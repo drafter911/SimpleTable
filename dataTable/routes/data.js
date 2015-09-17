@@ -18,6 +18,26 @@ router.get('/data', function (req, res, next) {
     for (var i = parameters.offset; i < (+parameters.limit + +parameters.offset); i++) {
         pagedData.push(data[i]);
     }
+    if (parameters.hasOwnProperty('sortBy')) {
+        //if(parameters.desc === true){
+        //    pagedData.sort(function (a, b) {
+        //        if (a[parameters.sortBy] > b[parameters.sortBy])
+        //            return 1;
+        //        if (a[parameters.sortBy] < b[parameters.sortBy])
+        //            return -1;
+        //        return 0;
+        //    });
+        //}
+        //if(parameters.desc === false) {
+            pagedData.sort(function (a, b) {
+                if (a[parameters.sortBy] > b[parameters.sortBy])
+                    return 1;
+                if (a[parameters.sortBy] < b[parameters.sortBy])
+                    return -1;
+                return 0;
+            });
+        //}
+    }
     var page = (+parameters.offset / 20) + 1;
     res.send({table: pagedData, page: page, count: data.length});
 });
@@ -25,7 +45,7 @@ router.get('/data', function (req, res, next) {
 router.post('/data', function (req, res, next) {
     var dataElem = req.body;
     data.push(dataElem);
-    dataElem._id = data.length;
+    dataElem._id = data.length + 1;
     res.send(dataElem);
 });
 

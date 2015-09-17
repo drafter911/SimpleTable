@@ -12,6 +12,7 @@ define([
         },
 
         serializeData: function () {
+            this.model.set('longitude', (+(this.model.get('longitude'))).toFixed(1));
             return {
                 model: this.model.toJSON()
             };

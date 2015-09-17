@@ -24,6 +24,17 @@
         max-width: 960px;
         height: calc(100% - 100px);
         margin: 30px auto 0;
+        .sort-buttons {
+          padding: 5px 0;
+          .white:hover, .white:focus {
+            color: white;
+          }
+        }
+        .column-sort{
+          &:hover {
+            background-color: darken(#fff, 10);
+          }
+        }
       }
     }
 

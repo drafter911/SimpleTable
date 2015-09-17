@@ -2,7 +2,8 @@ define([
     'backbone',
     'marionette',
     'Controllers/TableController'
-],function(Backbone, Marionette, DTController) {
+],
+function(Backbone, Marionette, DTController) {
     return Marionette.AppRouter.extend({
 
         initialize: function(app) {
@@ -10,7 +11,9 @@ define([
         },
 
         appRoutes: {
-            "data": "showCollection"
+            "data(/)": "showCollection"
+            // "": "showCollection"
+            // "data/:data": "showCollection"
         }
     });
 });

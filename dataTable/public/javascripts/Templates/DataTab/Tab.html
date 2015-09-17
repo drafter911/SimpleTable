@@ -1,12 +1,16 @@
+<!-- <div class="sort-buttons">
+    <button class=" btn fa fa-sort-numeric-desc"></button>
+    <button class=" btn fa fa-sort-numeric-asc"></button>
+</div> -->
 <table class="table table-striped table-bordered">
     <thead>
-    <tr>
-        <th>ID</th>
-        <th>Is active</th>
-        <th>Age</th>
-        <th>Credit</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
+    <tr class="table-header">
+        <th data-sort="_id" class="column-sort">ID <span class="fa fa-sort-desc pull-right"></span></th>
+        <th data-sort="isActive" class="column-sort">Is active <span class="fa fa-sort-desc pull-right"></span></th>
+        <th data-sort="age" class="column-sort">Age <span class="fa fa-sort-desc pull-right"></span></th>
+        <th data-sort="credit" class="column-sort">Credit <span class="fa fa-sort-desc pull-right"></span></th>
+        <th data-sort="latitude" class="column-sort">Latitude <span class="fa fa-sort-desc pull-right"></span></th>
+        <th data-sort="longitude" class="column-sort">Longitude <span class="fa fa-sort-desc pull-right"></span></th>
     </tr>
     </thead>
     <tbody id="table-content"></tbody>

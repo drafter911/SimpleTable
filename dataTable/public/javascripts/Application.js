@@ -2,9 +2,10 @@ define([
         'backbone',
         'marionette',
         'Router',
-        'Views/ApplicationView'
+        'Views/ApplicationView',
+        'Controllers/TableController'
     ],
-    function (Backbone, Marionette, Router, ApplicationView) {
+    function (Backbone, Marionette, Router, ApplicationView, DTController) {
         var app = new Marionette.Application({
 
             initialize: function(options) {
@@ -23,7 +24,10 @@ define([
 
         this.router = new Router(app);
 
+        this.controller = new DTController(app);
+
         app.on('start', function(options) {
+            debugger
             Backbone.history.start({
                 pushState: true
             });
